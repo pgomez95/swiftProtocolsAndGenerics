@@ -1,5 +1,15 @@
 # swiftProtocolsAndGenerics
 
+Workshop for Swift protocols &amp; generics
+
+[![Build Status](https://travis-ci.org/pgomez95/swiftProtocolsAndGenerics.svg?branch=master)](https://travis-ci.org/pgomez95/swiftProtocolsAndGenerics)
+[![Coverage Status](https://coveralls.io/repos/github/pgomez95/swiftProtocolsAndGenerics/badge.svg?branch=master)](https://coveralls.io/github/pgomez95/swiftProtocolsAndGenerics?branch=master)
+
+
+[Code Documentation](https://github.com/pgomez95/swiftProtocolsAndGenerics/docs/index.html)
+
+
+[Test report](https://github.com/pgomez95/swiftProtocolsAndGenerics/build/reports/tests.html)
 
 To get documentation :
 
