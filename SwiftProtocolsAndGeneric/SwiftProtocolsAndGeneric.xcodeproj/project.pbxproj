@@ -11,6 +11,7 @@
 		83E2564C1DEC483700937F0B /* SwiftProtocolsAndGenericTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2564B1DEC483700937F0B /* SwiftProtocolsAndGenericTests.swift */; };
 		83E2564E1DEC483700937F0B /* SwiftProtocolsAndGeneric.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E256401DEC483700937F0B /* SwiftProtocolsAndGeneric.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83E256581DEC493000937F0B /* EditDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E256571DEC493000937F0B /* EditDistance.swift */; };
+		83E2565A1DEC4FFC00937F0B /* EditDistanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E256591DEC4FFC00937F0B /* EditDistanceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		83E2564B1DEC483700937F0B /* SwiftProtocolsAndGenericTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProtocolsAndGenericTests.swift; sourceTree = "<group>"; };
 		83E2564D1DEC483700937F0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83E256571DEC493000937F0B /* EditDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDistance.swift; sourceTree = "<group>"; };
+		83E256591DEC4FFC00937F0B /* EditDistanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDistanceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				83E2564B1DEC483700937F0B /* SwiftProtocolsAndGenericTests.swift */,
 				83E2564D1DEC483700937F0B /* Info.plist */,
+				83E256591DEC4FFC00937F0B /* EditDistanceTest.swift */,
 			);
 			path = SwiftProtocolsAndGenericTests;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E2565A1DEC4FFC00937F0B /* EditDistanceTest.swift in Sources */,
 				83E2564C1DEC483700937F0B /* SwiftProtocolsAndGenericTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
