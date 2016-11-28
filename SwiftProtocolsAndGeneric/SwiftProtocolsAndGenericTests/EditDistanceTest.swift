@@ -7,20 +7,13 @@
 //
 
 import XCTest
+@testable import SwiftProtocolsAndGeneric
 
 class EditDistanceTest: XCTestCase {
         
     override func setUp() {
         super.setUp()
-        
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
     override func tearDown() {
@@ -28,9 +21,59 @@ class EditDistanceTest: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testDistance() {
+        var str1 = "dog"
+        var str2 = "dogs"
+        
+        //la distancia es 1 porque podemos insertar una "s" al final de "dog"
+        //para obtener "dogs"
+        XCTAssertEqual(EditDistance.distance(x: str1, y: str2), 1)
+        
+        str1 = "puppy"
+        str2 = "lucky"
+        
+        //la distancia es 3 porque podemos intercambiar la "l" por la primera
+        //"p", la "c" por la segunda "p" y la "k" por la tercera "p"
+        XCTAssertEqual(EditDistance.distance(x: str1, y: str2), 3)
     }
     
+    func testPerformanceExample() {
+        // This is an example of a performance test case.
+        self.measure {
+            let cities = ["Barcelona", "Madrid", "Hospitalet de Llobregat",
+                          "A Coruña"]
+            
+            //buscamos la ciudad más parecida a "L'Hospitalet"
+            var city = "L'Hospitalet de Llobregat"
+            var bestMatch : String?
+            var bestDistance = Int.max
+            for c in cities {
+                let d = EditDistance.distance(x: c, y: city)
+                
+                if(d < bestDistance) {
+                    bestDistance = d
+                    bestMatch = c
+                }
+            }
+            
+            XCTAssertEqual(bestMatch, "Hospitalet de Llobregat")
+            
+            //buscamos la ciudad más parecida a "La Coruña"
+            city = "La Coruña"
+            bestMatch = nil
+            bestDistance = Int.max
+            for c in cities {
+                let d = EditDistance.distance(x: c, y: city)
+                
+                if(d < bestDistance) {
+                    bestDistance = d
+                    bestMatch = c
+                }
+            }
+            
+            XCTAssertEqual(bestMatch, "A Coruña")
+        }
+    }
 }
+
+
