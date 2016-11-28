@@ -10,7 +10,21 @@ Workshop for Swift protocols &amp; generics
 
 
 
-[Test report](https://pgomez95.github.io/swiftProtocolsAndGenerics/build/reports/tests.html)
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
 
 To get documentation :
 
