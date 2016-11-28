@@ -35,6 +35,21 @@ class EditDistanceTest: XCTestCase {
         //la distancia es 3 porque podemos intercambiar la "l" por la primera
         //"p", la "c" por la segunda "p" y la "k" por la tercera "p"
         XCTAssertEqual(EditDistance.distance(x: str1, y: str2), 3)
+        
+        str1 = ""
+        str2 = "lucky"
+        
+        //la distancia es 3 porque podemos intercambiar la "l" por la primera
+        //"p", la "c" por la segunda "p" y la "k" por la tercera "p"
+        XCTAssertEqual(EditDistance.distance(x: str1, y: str2), 5)
+        
+        
+        str1 = "puppy"
+        str2 = ""
+        
+        //la distancia es 3 porque podemos intercambiar la "l" por la primera
+        //"p", la "c" por la segunda "p" y la "k" por la tercera "p"
+        XCTAssertEqual(EditDistance.distance(x: str1, y: str2), 5)
     }
     
     func testPerformanceExample() {

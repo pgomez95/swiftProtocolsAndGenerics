@@ -29,6 +29,7 @@ public class EditDistance {
      - returns: la distancia de Levenshtein.
      */
     public static func distance(x: String, y: String) -> Int {
+        
         return internalDistance(x: x, y: y)
     }
     
@@ -49,12 +50,13 @@ public class EditDistance {
         //inserciones
         let n = x.count(), m = y.count()
         
-        if n == 0 {
+        if (n == 0) {
             return m
         }
         if m == 0 {
             return n
         }
+        
         
         //en lugar de mantener una matriz entera (lo cual requeriría un espacio
         //en memoria O(n*m)) simplemente se guarda la fila actual y la
