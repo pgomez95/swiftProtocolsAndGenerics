@@ -1,14 +1,17 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A9B832A0754830318F868DDED8C4DEF7C013C8D8",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "9D6669FE94EB17B4087475A7C0A1E43ED82ABAE0" : 9223372036854775807,
+    "A9B832A0754830318F868DDED8C4DEF7C013C8D8" : 9223372036854775807,
     "AC7A630FAB25DFA8A5AC767171245361B8802F71" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FF83A95B-1C01-43E1-96E5-6929C0C8C645",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "9D6669FE94EB17B4087475A7C0A1E43ED82ABAE0" : "..",
+    "A9B832A0754830318F868DDED8C4DEF7C013C8D8" : "swiftProtocolsAndGenerics\/",
     "AC7A630FAB25DFA8A5AC767171245361B8802F71" : ""
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "SwiftProtocolsAndGeneric",
@@ -19,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/paulagd\/react-test-project.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9D6669FE94EB17B4087475A7C0A1E43ED82ABAE0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pgomez95\/swiftProtocolsAndGenerics.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A9B832A0754830318F868DDED8C4DEF7C013C8D8"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pgomez95\/ios-swift.git",

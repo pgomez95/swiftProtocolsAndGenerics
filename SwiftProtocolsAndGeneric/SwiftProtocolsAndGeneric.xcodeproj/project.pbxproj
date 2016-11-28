@@ -10,7 +10,7 @@
 		83E256471DEC483700937F0B /* SwiftProtocolsAndGeneric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E2563D1DEC483700937F0B /* SwiftProtocolsAndGeneric.framework */; };
 		83E2564C1DEC483700937F0B /* SwiftProtocolsAndGenericTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2564B1DEC483700937F0B /* SwiftProtocolsAndGenericTests.swift */; };
 		83E2564E1DEC483700937F0B /* SwiftProtocolsAndGeneric.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E256401DEC483700937F0B /* SwiftProtocolsAndGeneric.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		83E256581DEC493000937F0B /* EditeDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E256571DEC493000937F0B /* EditeDistance.swift */; };
+		83E256581DEC493000937F0B /* EditDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E256571DEC493000937F0B /* EditDistance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,7 @@
 		83E256461DEC483700937F0B /* SwiftProtocolsAndGenericTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftProtocolsAndGenericTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E2564B1DEC483700937F0B /* SwiftProtocolsAndGenericTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProtocolsAndGenericTests.swift; sourceTree = "<group>"; };
 		83E2564D1DEC483700937F0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83E256571DEC493000937F0B /* EditeDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditeDistance.swift; sourceTree = "<group>"; };
+		83E256571DEC493000937F0B /* EditDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDistance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 			children = (
 				83E256401DEC483700937F0B /* SwiftProtocolsAndGeneric.h */,
 				83E256411DEC483700937F0B /* Info.plist */,
-				83E256571DEC493000937F0B /* EditeDistance.swift */,
+				83E256571DEC493000937F0B /* EditDistance.swift */,
 			);
 			path = SwiftProtocolsAndGeneric;
 			sourceTree = "<group>";
@@ -200,7 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83E256581DEC493000937F0B /* EditeDistance.swift in Sources */,
+				83E256581DEC493000937F0B /* EditDistance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +404,7 @@
 				83E256531DEC483700937F0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83E256541DEC483700937F0B /* Build configuration list for PBXNativeTarget "SwiftProtocolsAndGenericTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +413,7 @@
 				83E256561DEC483700937F0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
