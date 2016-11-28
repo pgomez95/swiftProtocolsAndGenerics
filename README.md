@@ -6,7 +6,7 @@ Workshop for Swift protocols &amp; generics
 [![Coverage Status](https://coveralls.io/repos/github/pgomez95/swiftProtocolsAndGenerics/badge.svg?branch=master)](https://coveralls.io/github/pgomez95/swiftProtocolsAndGenerics?branch=master)
 
 
-[Code Documentation](https://pgomez95.github.io/swiftProtocolsAndGenerics/docs/Classes.html)
+[Code Documentation](https://pgomez95.github.io/docs/Classes.html)
 
 
 
