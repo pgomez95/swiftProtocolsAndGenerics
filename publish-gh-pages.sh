@@ -1,19 +1,19 @@
-#!/bin/bash
+#!/bin/bas#!/bin/bash
 set -e # Exit with nonzero exit code if anything fails
 SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 #This function needs to do some stuff and store all the artifacts in the out directory
 function doStuff {
-    #generate documentation
-   jazzy --clean --author Paula Gomez --github_url https://github.com/pgomez95/swiftProtocolsAndGenerics --xcodebuild-arguments -project,./SwiftProtocolsAndGeneric/SwiftProtocolsAndGeneric.xcodeproj,-scheme,SwiftProtocolsAndGeneric --module SwiftProtocolsAndGeneric --output out/docs
-   #move result of xcpretty to out directory
-   mv build out
+    #generate documentation
+    jazzy --clean --author pgomez95 --github_url https://github.com/pgomez95/swiftProtocolsAndGenerics --xcodebuild-arguments -project,./SwiftProtocolsAndGeneric/SwiftProtocolsAndGeneric.xcodeproj,-scheme,SwiftProtocolsAndGeneric --module SwiftProtocolsAndGeneric --output out/docs
+    #move result of xcpretty to out directory
+    mv build out
 }
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
-    echo "Skipping deploy; just doing a build."
-    doStuff
-    exit 0
+    echo "Skipping deploy; just doing a build."
+    doStuff
+    exit 0
 fi
 # Save some useful information
 REPO=`git config remote.origin.url`
@@ -27,7 +27,6 @@ git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 # Clean out existing contents
 rm -rf out/**/* || exit 0
-
 # Get the deploy key by using Travis's stored variables to decrypt github_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
 ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
@@ -37,6 +36,7 @@ openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in github_key.enc -out 
 chmod 600 github_key
 eval `ssh-agent -s`
 ssh-add github_key
+ 
 # Run our compile script
 doStuff
 # Now let's go have some fun with the cloned repo
@@ -46,15 +46,14 @@ git config user.email "$COMMIT_AUTHOR_EMAIL"
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 #(lines below are commented because it can fail with too many arguments
 #if [ -z `git diff --exit-code` ]; then
-#    echo "No changes to the output on this push; exiting."
-#    exit 0
+#    echo "No changes to the output on this push; exiting."
+#    exit 0
 #fi
-
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
 git add .
 git commit -m "Deploy to GitHub Pages: ${SHA}"
-
+# Now that we're all set up, we can push.
 echo "Pushing to $SSH_REPO on branch $TARGET_BRANCH"
 #git push $SSH_REPO $TARGET_BRANCH
 git push https://pgomez95:$GITHUB_OAUTH_TOKEN@github.com/pgomez95/swiftProtocolsAndGenerics.git $TARGET_BRANCH
