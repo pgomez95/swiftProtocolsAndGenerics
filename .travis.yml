@@ -9,10 +9,7 @@ before_install:
   - gem install slather --no-ri --no-rdoc
   - gem install jazzy --no-ri --no-rdoc
   - gem install xcpretty --no-ri --no-rdoc
-# script:
-#   - xcodebuild clean test -project ./SwiftProtocolsAndGeneric/SwiftProtocolsAndGeneric.xcodeproj -scheme SwiftProtocolsAndGeneric -destination 'platform=iOS Simulator,name=iPhone 7' TEST_AFTER_BUILD=YES -configuration Debug -enableCodeCoverage=YES
-#   - slather
-#   - ./publish-gh-pages.sh
+
 script:
   - set -o pipefail && xcodebuild clean test -project ./SwiftProtocolsAndGeneric/SwiftProtocolsAndGeneric.xcodeproj -scheme SwiftProtocolsAndGeneric -destination 'platform=iOS Simulator,name=iPhone 7' TEST_AFTER_BUILD=YES -configuration Debug -enableCodeCoverage=YES | tee xcodebuild.log | xcpretty -r html
   - ./publish-gh-pages.sh
