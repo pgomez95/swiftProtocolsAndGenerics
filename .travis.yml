@@ -1,7 +1,20 @@
 language: objective-c
 osx_image: xcode8.1
+env:
+  global:
+    - secure: "r6DeaBLLMaMR7TE9b8tq1MNTJOEp1N+QHomf9b/U1etInki1cIwZbsJbJT8A5y999LfcXxmcZ3yV+n19nyf28rU7Y2WlGZy3LlfFxVFe3p+W2i7/UN0PbNtFKKo16Q3dcdBYT6XkGENZeqem2/cPQLjAkBE/HG5napz9vhflCKZYL/eGllk4wpsTGw4k2t0vxoTnHct1Qvr+sz7pwRBuErv47ZJtz53mVrqOR1OeyiHnnM64G2p89f9NxCgEvslHueJmEfBf5DfK9AnagCoJoKeb2WYdKuWwMxfHA/Fikbg+sntMMym0wTqOoYaICmkWA+bWIVqC19WcD1lKe+z7T9ePWAK4LI6QFqRfQpbIAiMF0OhmZqM0hjihty/7B+EESZbh330r/sdPAlTcOjSrYQ3atzGbDmM2yXzuGRNZ6hkMrjhvWvOzH+8BaSx9kyj9jc1oKXuyyhRLmWeHOAVPDgNSbyy2+R9kywTYPK7WMpquSdzQGDGQc4h3mNvh6fO9PJnLiu9MXDFuxMaF3+GORad1+f/rSrUjZGbmUZO1LtQga8CSVgdpan4kRkBG2jR1tcwV2shV6UZfhrG/98YPM4FEPKVHY6AICGEbdaOTXgfUGNI88tJMKMl8+cQbtlxMmF2e+02IYKNLp7dpuJqrgDtTg+yi4d4KGPjvpwtybJ8="
+    - ENCRYPTION_LABEL: "39edc4535fda"
+    - COMMIT_AUTHOR_EMAIL: "pgomez@visual-engin.com"
 before_install:
   - gem install slather --no-ri --no-rdoc
+  - gem install jazzy --no-ri --no-rdoc
+  - gem install xcpretty --no-ri --no-rdoc
+# script:
+#   - xcodebuild clean test -project ./SwiftProtocolsAndGeneric/SwiftProtocolsAndGeneric.xcodeproj -scheme SwiftProtocolsAndGeneric -destination 'platform=iOS Simulator,name=iPhone 7' TEST_AFTER_BUILD=YES -configuration Debug -enableCodeCoverage=YES
+#   - slather
+#   - ./publish-gh-pages.sh
 script:
-  - xcodebuild clean test -project ./SwiftProtocolsAndGeneric/SwiftProtocolsAndGeneric.xcodeproj -scheme SwiftProtocolsAndGeneric -destination 'platform=iOS Simulator,name=iPhone 7' TEST_AFTER_BUILD=YES -configuration Debug -enableCodeCoverage=YES
-  - slather
+  - set -o pipefail && xcodebuild clean test -project ./SwiftProtocolsAndGeneric/SwiftProtocolsAndGeneric.xcodeproj -scheme SwiftProtocolsAndGeneric -destination 'platform=iOS Simulator,name=iPhone 7' TEST_AFTER_BUILD=YES -configuration Debug -enableCodeCoverage=YES | tee xcodebuild.log | xcpretty -r html
+  - ./publish-gh-pages.sh
+after_success:
+  - cd $TRAVIS_BUILD_DIR && slather

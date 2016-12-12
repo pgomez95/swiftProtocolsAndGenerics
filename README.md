@@ -3,7 +3,7 @@
 Workshop for Swift protocols &amp; generics
 
 
-[![Build Status](https://travis-ci.org/pgomez95/swiftProtocolsAndGenerics.svg?branch=master)
+![Build Status](https://travis-ci.org/pgomez95/swiftProtocolsAndGenerics.svg?branch=master)
 
 [![Coverage Status](https://coveralls.io/repos/github/pgomez95/swiftProtocolsAndGenerics/badge.svg?branch=master)](https://coveralls.io/github/pgomez95/swiftProtocolsAndGenerics?branch=master)
 
