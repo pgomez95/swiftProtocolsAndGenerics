@@ -4,16 +4,16 @@ SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 #This function needs to do some stuff and store all the artifacts in the out directory
 function doStuff {
-    #generate documentation
-    jazzy --clean --author Paula Gómez --github_url https://github.com/pgomez95/swiftProtocolsAndGenerics --xcodebuild-arguments -project,./SwiftProtocolsAndGeneric/SwiftProtocolsAndGeneric.xcodeproj,-scheme,SwiftProtocolsAndGeneric --module SwiftProtocolsAndGeneric --output docs
-    #move result of xcpretty to out directory
-    mv build out
+#generate documentation
+jazzy --clean --author Paula Gómez --github_url https://github.com/pgomez95/swiftProtocolsAndGenerics --xcodebuild-arguments -project,./SwiftProtocolsAndGeneric/SwiftProtocolsAndGeneric.xcodeproj,-scheme,SwiftProtocolsAndGeneric --module SwiftProtocolsAndGeneric --output docs
+#move result of xcpretty to out directory
+mv build out
 }
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
-    echo "Skipping deploy; just doing a build."
-    doStuff
-    exit 0
+echo "Skipping deploy; just doing a build."
+doStuff
+exit 0
 fi
 # Save some useful information
 REPO=`git config remote.origin.url`
