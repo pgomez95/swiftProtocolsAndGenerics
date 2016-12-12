@@ -36,7 +36,6 @@ openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in github_key.enc -out 
 chmod 600 github_key
 eval `ssh-agent -s`
 ssh-add github_key
- 
 # Run our compile script
 doStuff
 # Now let's go have some fun with the cloned repo
