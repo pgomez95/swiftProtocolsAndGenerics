@@ -5,7 +5,7 @@ TARGET_BRANCH="gh-pages"
 #This function needs to do some stuff and store all the artifacts in the out directory
 function doStuff {
     #generate documentation
-    jazzy --clean --author pgomez95 --github_url https://github.com/pgomez95/swiftProtocolsAndGenerics --xcodebuild-arguments -project,./SwiftProtocolsAndGeneric/SwiftProtocolsAndGeneric.xcodeproj,-scheme,SwiftProtocolsAndGeneric --module SwiftProtocolsAndGeneric --output out/docs
+    jazzy --clean --author Paula Gómez --github_url https://github.com/pgomez95/swiftProtocolsAndGenerics --xcodebuild-arguments -project,./SwiftProtocolsAndGeneric/SwiftProtocolsAndGeneric.xcodeproj,-scheme,SwiftProtocolsAndGeneric --module SwiftProtocolsAndGeneric --output docs
     #move result of xcpretty to out directory
     mv build out
 }
